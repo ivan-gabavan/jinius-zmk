@@ -517,6 +517,19 @@
  ** Place holder only.
  ** Will be used later for switching between my personal Mac and Windows system switching
     macros {
+            hello: hello {
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings = <&kp LS(RU_CYRILLIC_PE) &kp RU_CYRILLIC_ER &kp RU_CYRILLIC_I &kp RU_CYRILLIC_VE &kp RU_CYRILLIC_IE &kp RU_CYRILLIC_TE &kp COMMA>;
+                label = "HELLO";
+            };
+
+            thanks: thanks {
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings = <&kp LS(RU_CYRILLIC_ES) &kp RU_CYRILLIC_PE &kp RU_CYRILLIC_A &kp RU_CYRILLIC_ES &kp RU_CYRILLIC_I &kp RU_CYRILLIC_BE &kp RU_CYRILLIC_O &kp EXCLAMATION>;
+                label = "THANKS";
+            };
       con_bt: con_bt {
         label = "con_bt";
         compatible = "zmk,behavior-macro";
@@ -557,15 +570,15 @@
                 >;
         };
 
-        ru {
+        nums {
                     bindings = <
-        &to 0      &trans  &hml RU_CYRILLIC_SHCHA RU_CYRILLIC_SHA            &kp RU_CYRILLIC_EF   &kp RU_CYRILLIC_PE  &kp RU_CYRILLIC_BE     &kp RU_CYRILLIC_ZHE  &kp RU_CYRILLIC_EL  &kp RU_CYRILLIC_U                   &kp RU_CYRILLIC_YU  &kp RU_CYRILLIC_CHE  &kp MINUS
-        &kp TAB    &kp RU_CYRILLIC_A        &kp RU_CYRILLIC_ER                                &kp RU_CYRILLIC_ES   &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_GHE    &kp RU_CYRILLIC_EM   &kp RU_CYRILLIC_EN  &hml RU_CYRILLIC_IO RU_CYRILLIC_IE  &kp RU_CYRILLIC_I   &kp RU_CYRILLIC_O    &kp RIGHT_PARENTHESIS
-        &kp LSHFT  &kp RU_CYRILLIC_ZE       &hml RU_CYRILLIC_HARD_SIGN RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_TSE  &kp RU_CYRILLIC_DE  &kp RU_CYRILLIC_VE     &kp RU_CYRILLIC_KA   &kp RU_CYRILLIC_HA  &kp COMMA                           &kp DOT             &kp QUESTION         &kp EXCLAMATION
-                                                                                              &kp LGUI             &trans
-                                                                                                    &kp SPACE              &kp RET              &lt 2 BACKSPACE     &kp LALT
+        &hello         &kp LS(EXCL)   &kp LS(AT)   &kp LS(POUND)   &kp LS(DLLR)     &kp LS(PRCNT)    &kp LS(CARET)  &kp LS(AMPS)  &kp LS(STAR)  &kp LS(LPAR)  &kp LS(RPAR)  &kp GRAVE
+        &kp LESS_THAN  &kp N1         &kp N2       &kp N3          &kp N4           &kp N5           &kp N6         &kp N7        &kp N8        &kp N9        &kp N0        &kp GREATER_THAN
+        &thanks        &kp RU_NUMERO  &kp RU_PLUS  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp FSLH         &kp NUBS       &kp LBKT      &kp RBKT      &kp MINUS     &kp EQUAL     &trans
+                                                   &kp LGUI        &trans           &kp SPACE        &kp RET        &trans        &kp LALT
                     >;
                 };
+
     };
 
 // KEYMAP NODE - ENDS **********************************************************
