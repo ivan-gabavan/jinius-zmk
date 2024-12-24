@@ -13,7 +13,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/outputs.h>
 
 // INCLUDES - ENDS *************************************************************
 // DEFINES - START *************************************************************
@@ -477,7 +476,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mt RGUI SPACE>, <&tog 1>;
+            bindings = <&mt RGUI SPACE>, <&tog 0>;
         };
 
         /***********************************************
@@ -492,7 +491,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mt LCTRL XXX>, <&tog 2>;
+            bindings = <&mt LCTRL XXX>, <&tog 0>;
         };
 
         /***********************************************
@@ -507,7 +506,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mt LCTRL XXX>, <&tog 3>;
+            bindings = <&mt LCTRL XXX>, <&tog 0>;
         };
     };
 
@@ -547,50 +546,17 @@
 
         // LAYERS - START **********************************************************
         // QWERTY layer
-
-        qwerty_bt_layer {
-            label = "QWT__BT";
-            bindings = <
-&escgrv   &kp Q         &kp W        &kp E        &kp R         &kp T        &kp Y       &kp U         &kp I        &kp O        &kp P            &bkspc_del
-&kp TAB   &hml LCTRL A  &hml LALT S  &hml LGUI D  &hml LSHFT F  &kp G        &kp H       &hmr RSHFT J  &hmr RGUI K  &hmr RALT L  &hmr RCTRL SEMI  &kp RET
-&ss_left  &kp Z         &kp X        &kp C        &kp V         &kp B        &kp N       &kp M         &kp COMMA    &kp DOT      &kp FSLH         &ss_right
-                                     &sk LALT     &c_btnav_l    &s_c_fn_l    &s_c_sym_r  &c_cdh_r      &sk RALT
-            >;
-        };
-
         // Function and Number layer
         // Symbols layer
-
-        symbols_layer {
-            label = "SYMBOLS";
-            bindings = <
-&kp GRAVE  &kp EXCL          &kp AT          &kp HASH        &kp DLLR         &kp PRCNT    &cart_excl  &amp_at           &star_hash      &lpar_dllr      &rpar_prcnt      &bkspc_del
-&kp TAB    &hml LCTRL UNDER  &hml LALT PLUS  &hml LGUI LBRC  &hml LSHFT RBRC  &kp PIPE     &kp MINUS   &hmr RSHFT EQUAL  &hmr RGUI LBKT  &hmr RALT LBKT  &hmr RCTRL BSLH  &kp RET
-&ss_left   &kp COLON         &kp DQT         &kp LT          &kp GT           &kp QMARK    &kp SEMI    &kp SQT           &kp COMMA       &kp DOT         &kp FSLH         &ss_right
-                                             &sk LALT        &c_btnav_l       &s_c_fn_l    &s_c_sym_r  &c_cdh_r          &sk RALT
-            >;
-        };
-
         // Bluetooth and Navigation layer
-
-        bt_navigation_layer {
-            label = "BT__NAV";
-            bindings = <
-&escgrv        &out OUT_USB   &bootloader                       &bt BT_CLR  &sys_reset       &out OUT_BLE      &kp HOME XXX     &kp UP XXX        &kp PG_UP  &bkspc_del  &kp TAB       &hml LCTRL XXX
-&hml LALT XXX  &hml LGUI XXX  &hml LSHFT XXX XXX                &kp END     &hmr RSHFT LEFT  &hmr RGUI DOWN    &hmr RALT RIGHT  &hmr RCTRL PG_DN  &kp RET    &ss_left    &bt BT_SEL 0  &bt BT_SEL 1
-&bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4 XXX XXX XXX XXX XXX  &ss_right   &sk LALT         &c_btnav_l        &s_c_fn_l        &s_c_sym_r        &c_cdh_r   &sk RALT
-            >;
-        };
-
         // Colemak Mod-DH: Primary layer. To learn and and use
 
-        colemakdh_bt_layer {
-            label = "CDH__BT";
+        layer_1 {
             bindings = <
-&escgrv   &kp Q         &kp W        &kp F        &kp P         &kp B        &kp J       &kp L         &kp U        &kp Y        &kp SEMI      &bkspc_del
-&kp TAB   &hml LCTRL A  &hml LALT R  &hml LGUI S  &hml LSHFT T  &kp G        &kp M       &hmr RSHFT N  &hmr RGUI E  &hmr RALT I  &hmr RCTRL O  &kp RET
-&ss_left  &kp Z         &kp X        &kp C        &kp D         &kp V        &kp K       &kp H         &kp COMMA    &kp DOT      &kp FSLH      &ss_right
-                                     &sk LALT     &c_btnav_l    &s_c_fn_l    &s_c_sym_r  &c_cdh_r      &sk RALT
+&trans     &kp Q  &kp W  &kp F     &kp P   &kp B        &kp J    &kp L   &kp U      &kp Y    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
+&kp TAB    &kp A  &kp R  &kp S     &kp T   &kp G        &kp M    &kp N   &kp E      &kp I    &kp O                 &kp SEMI
+&kp LSHFT  &kp Z  &kp X  &kp C     &kp D   &kp V        &kp K    &kp H   &kp COMMA  &kp DOT  &kp QUESTION          &kp EXCLAMATION
+                         &kp LGUI  &trans  &kp SPACE    &kp RET  &trans  &kp LALT
             >;
         };
 
